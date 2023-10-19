@@ -8,11 +8,7 @@ const socket_io_1 = require("socket.io");
 const http_1 = require("http");
 const app = (0, express_1.default)();
 const server = (0, http_1.createServer)(app);
-const io = new socket_io_1.Server(server, {
-    cors: {
-        origin: "http://localhost:5173"
-    }
-});
+const io = new socket_io_1.Server(server);
 const waitingPlayers = []; // マッチング待ちのプレイヤーを格納する配列
 const activeRooms = {}; // アクティブなルームを格納するオブジェクト
 app.use(express_1.default.static("public"));
